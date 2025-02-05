@@ -19,6 +19,7 @@ export const useLogin = () => {
     const json = await response.json();
 
     if (!response.ok) {
+      setIsLoading(false);
       setError(json.error);
     }
 
@@ -33,5 +34,5 @@ export const useLogin = () => {
       setIsLoading(false);
     }
   };
-  return { login, error, isLoading };
+  return { login, isLoading, error };
 };
