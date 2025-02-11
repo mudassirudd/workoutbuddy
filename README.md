@@ -4,6 +4,7 @@ WorkoutBuddy is a simple and user-friendly web application designed to help you 
 
 ## Features
 
+- **User Authentication**: Secure user authentication using bcrypt for password hashing and JWT for token-based authentication.
 - **Add a Workout**: Record a workout with details such as the number of reps, load, and the time it was added.
 - **Delete a Workout**: Remove an existing workout from your list.
 - **Track Details**: Keep track of your workout information with timestamps for better organization.
@@ -15,6 +16,8 @@ WorkoutBuddy is a simple and user-friendly web application designed to help you 
 - **React.js**: Provides the frontend for a seamless and interactive user experience.
 - **Node.js**: Acts as the runtime environment for executing server-side JavaScript code.
 - **Postman**: Used during development for testing and debugging API endpoints.
+- **bcrypt**: Used for hashing passwords securely.
+- **JWT (JSON Web Token)**: Implements authentication by generating and verifying tokens.
 
 ## Installation
 
@@ -43,6 +46,7 @@ Ensure you have the following installed on your system:
    ```env
    MONGO_URI=your_mongo_connection_string
    PORT=5000
+   JWT_SECRET=your_jwt_secret
    ```
 
 4. **Install Frontend Dependencies**
@@ -115,10 +119,51 @@ Ensure you have the following installed on your system:
      }
      ```
 
+### Authentication Endpoints
+
+1. **POST /api/users/register**
+   - Register a new user.
+   - Request Body:
+     ```json
+     {
+       "name": "John Doe",
+       "email": "johndoe@example.com",
+       "password": "securepassword"
+     }
+     ```
+   - Example Response:
+     ```json
+     {
+       "_id": "60c72b2f9b1d4c001f8e4e3c",
+       "name": "John Doe",
+       "email": "johndoe@example.com",
+       "token": "your_jwt_token"
+     }
+     ```
+
+2. **POST /api/users/login**
+   - Authenticate a user and return a token.
+   - Request Body:
+     ```json
+     {
+       "email": "johndoe@example.com",
+       "password": "securepassword"
+     }
+     ```
+   - Example Response:
+     ```json
+     {
+       "_id": "60c72b2f9b1d4c001f8e4e3c",
+       "name": "John Doe",
+       "email": "johndoe@example.com",
+       "token": "your_jwt_token"
+     }
+     ```
+
 ## Future Enhancements
 
-- Add user authentication and authorization.
-- Include analytics to visualize workout progress.
+- Implement role-based authorization.
+- Add analytics to visualize workout progress.
 - Add categories and tags for workouts.
 - Enable editing of existing workouts.
 
@@ -134,5 +179,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 For any inquiries, feel free to reach out:
 - **Email**: mudassirudd@gmail.com
-- **GitHub**: mudassirudd(https://github.com/mudassirudd)
+- **GitHub**: [mudassirudd](https://github.com/mudassirudd)
 
