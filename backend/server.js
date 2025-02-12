@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+const cors = require("cors");
+
 const express = require("express");
 const workoutRoutes = require("./routes/workouts");
 const userRoutes = require("./routes/user");
@@ -36,3 +38,9 @@ mongoose
 
 process.env;
 
+app.use(
+  cors({
+    origin: "https://workoutbuddy-1-e2q6.onrender.com",
+    credentials: true,
+  })
+);
