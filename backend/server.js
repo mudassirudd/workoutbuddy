@@ -2,7 +2,8 @@
 import "dotenv/config";
 import cors from "cors";
 
-const express = require("express");
+// const express = require("express");
+import express from "express";
 const workoutRoutes = require("./routes/workouts");
 const userRoutes = require("./routes/user");
 const mongoose = require("mongoose");
