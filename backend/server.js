@@ -4,8 +4,10 @@ import cors from "cors";
 
 // const express = require("express");
 import express from "express";
-const workoutRoutes = require("./routes/workouts");
-const userRoutes = require("./routes/user");
+// const workoutRoutes = require("./routes/workouts");
+import { workoutRoutes } from "./routes/workouts";
+// const userRoutes = require("./routes/user");
+import userRoutes from "./routes/user";
 const mongoose = require("mongoose");
 
 // express app
