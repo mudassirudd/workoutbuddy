@@ -36,9 +36,9 @@ mongoose
 
 process.env;
 
-const cors = require("cors");
-app.use(
-  cors({
-    origin: "https://workoutbuddy-2himrk2aq-mudassir-s-projects.vercel.app",
-  })
-);
+// const cors = require("cors");
+// app.use(
+//   cors({
+//     origin: "https://workoutbuddy-2himrk2aq-mudassir-s-projects.vercel.app",
+//   })
+// );
