@@ -39,6 +39,6 @@ process.env;
 const cors = require("cors");
 app.use(
   cors({
-    origin: "https://workoutbuddy-git-main-mudassir-s-projects.vercel.app",
+    origin: "https://workoutbuddy-2himrk2aq-mudassir-s-projects.vercel.app",
   })
 );
