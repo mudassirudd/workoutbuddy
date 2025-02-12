@@ -1,5 +1,5 @@
 require("dotenv").config();
-// const cors = require("cors");
+import cors from "cors";
 
 const express = require("express");
 const workoutRoutes = require("./routes/workouts");
@@ -37,8 +37,8 @@ mongoose
 
 process.env;
 
-// app.use(
-//   cors({
-//     origin: "https://workoutbuddy-2himrk2aq-mudassir-s-projects.vercel.app",
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://workoutbuddy-2himrk2aq-mudassir-s-projects.vercel.app",
+  })
+);
