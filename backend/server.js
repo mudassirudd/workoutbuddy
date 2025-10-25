@@ -16,6 +16,15 @@ app.use((req, res, next) => {
   next()
 })
 
+// import cors from 'cors'
+const cors = require('cors')
+app.use(
+  cors({
+    origin: 'https://workoutbuddy-ten.vercel.app',
+    credentials: true,
+  })
+)
+
 // routes
 app.use('/api/workouts', workoutRoutes)
 app.use('/api/user', userRoutes)
@@ -26,21 +35,10 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then((result) => {
     //listen for request
-    app.listen(process.env.PORT, (req, res) => {
+    app.listen(process.env.PORT, () => {
       console.log('Connected to DB and listening on Port ', process.env.PORT)
     })
   })
   .catch((error) => {
     console.log(error)
   })
-
-process.env
-
-// import cors from 'cors'
-const cors = require('cors')
-app.use(
-  cors({
-    origin: 'https://workoutbuddy-ten.vercel.app',
-    credentials: true,
-  })
-)
