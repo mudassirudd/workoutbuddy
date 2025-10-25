@@ -151,4 +151,15 @@ form.login {
     grid-template-columns: 3fr 1fr;
     gap: 20px;
   }
+
+  form h3 {
+ font-size: medium;
+ text-align: center;
+}
+  form label {
+ font-size: small;
+}
+form button {
+font-size: small;
+}
 }
