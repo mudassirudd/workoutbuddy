@@ -1,24 +1,24 @@
-require("dotenv").config();
+require('dotenv').config()
 
-const express = require("express");
-const workoutRoutes = require("./routes/workouts");
-const userRoutes = require("./routes/user");
-const mongoose = require("mongoose");
+const express = require('express')
+const workoutRoutes = require('./routes/workouts')
+const userRoutes = require('./routes/user')
+const mongoose = require('mongoose')
 
 // express app
-const app = express();
+const app = express()
 
 // middleware
-app.use(express.json());
+app.use(express.json())
 
 app.use((req, res, next) => {
-  console.log(req.path, req.method);
-  next();
-});
+  console.log(req.path, req.method)
+  next()
+})
 
 // routes
-app.use("/api/workouts", workoutRoutes);
-app.use("/api/user", userRoutes);
+app.use('/api/workouts', workoutRoutes)
+app.use('/api/user', userRoutes)
 
 // connect to db
 // const PORT = process.env.PORT;
@@ -27,12 +27,19 @@ mongoose
   .then((result) => {
     //listen for request
     app.listen(process.env.PORT, (req, res) => {
-      console.log("Connected to DB and listening on Port ", process.env.PORT);
-    });
+      console.log('Connected to DB and listening on Port ', process.env.PORT)
+    })
   })
   .catch((error) => {
-    console.log(error);
-  });
+    console.log(error)
+  })
 
-process.env;
+process.env
+import cors from 'cors'
 
+app.use(
+  cors({
+    origin: 'https://workoutbuddy-ten.vercel.app',
+    credentials: true,
+  })
+)
