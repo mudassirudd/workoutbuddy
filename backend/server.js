@@ -17,6 +17,14 @@ app.use(
   })
 )
 
+app.options(
+  '*',
+  cors({
+    origin: 'https://workoutbuddy-ten.vercel.app',
+    credentials: true,
+  })
+)
+
 // middleware
 app.use(express.json())
 
