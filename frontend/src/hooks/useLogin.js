@@ -15,6 +15,7 @@ export const useLogin = () => {
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include', // <--- add this if backend uses cookies
         body: JSON.stringify({ email, password }),
       }
     )
