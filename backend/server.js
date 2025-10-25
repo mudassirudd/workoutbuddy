@@ -8,14 +8,6 @@ const mongoose = require('mongoose')
 // express app
 const app = express()
 
-// middleware
-app.use(express.json())
-
-app.use((req, res, next) => {
-  console.log(req.path, req.method)
-  next()
-})
-
 // import cors from 'cors'
 const cors = require('cors')
 app.use(
@@ -24,6 +16,14 @@ app.use(
     credentials: true,
   })
 )
+
+// middleware
+app.use(express.json())
+
+app.use((req, res, next) => {
+  console.log(req.path, req.method)
+  next()
+})
 
 // routes
 app.use('/api/workouts', workoutRoutes)
