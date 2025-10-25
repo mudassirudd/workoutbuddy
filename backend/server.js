@@ -35,8 +35,9 @@ mongoose
   })
 
 process.env
-import cors from 'cors'
 
+// import cors from 'cors'
+const cors = require('cors')
 app.use(
   cors({
     origin: 'https://workoutbuddy-ten.vercel.app',
