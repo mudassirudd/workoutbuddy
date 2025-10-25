@@ -40,7 +40,7 @@ process.env
 const cors = require('cors')
 app.use(
   cors({
-    origin: 'https://workoutbuddy-ten.vercel.app',
+    origin: process.env.CLIENT_URL,
     credentials: true,
   })
 )
